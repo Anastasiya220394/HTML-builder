@@ -15,8 +15,8 @@ fs.readdir(path1, { withFileTypes: true }, function(err, items) {
                     console.log(err);
                   }
                   else {
-                    let size = stats.size/1024;
-                    console.log(name + ' ' + '-' + ' ' + a + ' ' + '-' + ' ' + size.toFixed(3) + 'kb');
+                    let size = stats.size
+                    console.log(name + ' ' + '-' + ' ' + a + ' ' + '-' + ' ' + size + 'b');
                 }
             });
         }
