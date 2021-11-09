@@ -7,7 +7,7 @@ fs.readdir(path1, { withFileTypes: true }, function(err, items) {
 
     items.forEach(function(item) {
         if(item.isFile() === true) {
-            let name = item.name.substr(0,item.name.indexOf("."));
+            let name = item.name.substring(0,item.name.lastIndexOf(".")) || item.name;
             let a = path.parse(item.name).ext.slice(1);
             let pathEl = path1 + '/' + item.name;
             fs.stat(pathEl, (err, stats) => {
